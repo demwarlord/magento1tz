@@ -1,0 +1,15 @@
+<?php
+/**
+ * @category    Overdose
+ * @package     Overdose_Testimonials
+ * @author      Dmytro Kamyshov
+ */
+?>
+<h1>LIST</h1>
+<ul>
+    <?php
+        foreach ($this->getList() as $item) {
+            echo "<li>" . $item->getMessage() . "</li>";
+        }
+    ?>
+</ul>

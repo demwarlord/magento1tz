@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    Overdose
+ * @package     Overdose_Testimonials
+ * @author      Dmytro Kamyshov
+ */
+-->
+<theme>
+    <parent>rwd/default</parent>
+</theme>

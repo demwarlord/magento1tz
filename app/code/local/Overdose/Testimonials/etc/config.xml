@@ -1,0 +1,61 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * @category    Overdose
+ * @package     Overdose_Testimonials
+ * @author      Dmytro Kamyshov
+ */
+-->
+<config>
+    <modules>
+        <Overdose_Testimonials>
+            <version>0.0.1</version>
+        </Overdose_Testimonials>
+    </modules>
+    <frontend>
+        <layout>
+            <updates>
+                <overdose_testimonials>
+                    <file>od_testimonials.xml</file>
+                </overdose_testimonials>
+            </updates>
+        </layout>
+        <routers>
+            <testimonials>
+                <use>standard</use>
+                <args>
+                    <module>Overdose_Testimonials</module>
+                    <frontName>testimonials</frontName>
+                </args>
+            </testimonials>
+        </routers>
+    </frontend>
+    <global>
+        <blocks>
+            <overdose_testimonials>
+                <class>Overdose_Testimonials_Block</class>
+            </overdose_testimonials>
+        </blocks>
+        <models>
+            <overdose_testimonials>
+                <class>Overdose_Testimonials_Model</class>
+                <resourceModel>overdose_testimonials_resource</resourceModel>
+            </overdose_testimonials>
+            <overdose_testimonials_resource>
+                <class>Overdose_Testimonials_Model_Resource</class>
+                <entities>
+                    <overdose_testimonials>
+                        <table>overdose_testimonials_entities</table>
+                    </overdose_testimonials>
+                </entities>
+            </overdose_testimonials_resource>
+        </models>
+        <resources>
+            <overdose_testimonials_setup>
+                <setup>
+                    <module>Overdose_Testimonials</module>
+                </setup>
+            </overdose_testimonials_setup>
+        </resources>
+    </global>
+</config>

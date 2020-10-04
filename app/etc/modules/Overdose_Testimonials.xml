@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * @category    Overdose
+ * @package     Overdose_Testimonials
+ * @author      Dmytro Kamyshov
+ */
+-->
+<config>
+    <modules>
+        <Overdose_Testimonials>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Overdose_Testimonials>
+    </modules>
+</config>

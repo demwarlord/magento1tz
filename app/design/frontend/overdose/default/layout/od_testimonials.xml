@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * @category    Overdose
+ * @package     Overdose_Testimonials
+ * @author      Dmytro Kamyshov
+ */
+-->
+<layout>
+    <testimonials_index_index>
+        <reference name="content">
+            <block type="overdose_testimonials/form" name="testimonials.form" template="testimonials/form.phtml"/>
+            <block type="overdose_testimonials/list" name="testimonials.list" template="testimonials/list.phtml"/>
+        </reference>
+    </testimonials_index_index>
+</layout>
