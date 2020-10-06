@@ -5,6 +5,9 @@
  * @author      Dmytro Kamyshov
  */
 
+$config = new Mage_Core_Model_Config();
+$config->saveConfig('design/package/name', "overdose");
+
 $installer = $this;
 $tableName = $installer->getTable('overdose_testimonials/overdose_testimonials');
 

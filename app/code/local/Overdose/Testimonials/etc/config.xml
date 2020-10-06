@@ -31,6 +31,11 @@
         </routers>
     </frontend>
     <global>
+        <helpers>
+            <overdose_testimonials>
+                <class>Overdose_Testimonials_Helper</class>
+            </overdose_testimonials>
+        </helpers>
         <blocks>
             <overdose_testimonials>
                 <class>Overdose_Testimonials_Block</class>

@@ -5,11 +5,40 @@
  * @author      Dmytro Kamyshov
  */
 ?>
-<h1>LIST</h1>
-<ul>
-    <?php
-        foreach ($this->getList() as $item) {
-            echo "<li>" . $item->getMessage() . "</li>";
-        }
+<h2 class="odtm-list-header">
+    List of testimonials
+</h2>
+<?php
+$list = $this->getList();
+
+if ($list->getSize() === 0) {
     ?>
+    <span class="odtm-list-befirst">
+        Be the first and leave a testimonial!
+    </span>
+    <?php
+} else {
+?>
+<ul class="odtm-list-ul">
+    <?php
+    foreach ($list as $item) {
+        ?>
+        <li class="odtm-list-li">
+            <h3 class="odtm-list-item-title">
+                <?php echo $item->getTitle(); ?>
+            </h3>
+            <span class="odtm-list-item-message">
+                    <?php echo $item->getMessage(); ?>
+            </span>
+            <img
+                    class="odtm-list-item-image"
+                    src="<?php echo $this->getImgPath($item->getImage()); ?>"
+                    alt="<?php echo $item->getTitle(); ?>"
+            >
+            <div class="clearfix"></div>
+        </li>
+        <?php
+    }
+}
+?>
 </ul>

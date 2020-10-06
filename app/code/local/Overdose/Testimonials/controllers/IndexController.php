@@ -7,6 +7,9 @@
 
 class Overdose_Testimonials_IndexController extends Mage_Core_Controller_Front_Action
 {
+    /**
+     * Shows and saves testimonials
+     */
     public function indexAction()
     {
         if ($this->getRequest()->isPost()) {
@@ -18,31 +21,31 @@ class Overdose_Testimonials_IndexController extends Mage_Core_Controller_Front_A
 
             $data = $this->getRequest()->getPost();
 
-            /** @var Overdose_Testimonials_Model_Testimonials $testimonial */
-            $testimonial = Mage::getModel('overdose_testimonials/testimonials')
-                ->setData($data);
+            if (!empty($data)) {
+                /* @var Mage_Core_Model_Session $session */
+                $session = Mage::getSingleton('core/session');
 
-            $validate = $testimonial->validate();
-            if ($validate === true) {
+                /** @var Overdose_Testimonials_Model_Testimonials $testimonial */
+                $testimonial = Mage::getModel('overdose_testimonials/testimonials');
+                $testimonial->setData($data);
+                $testimonial->setFiles($_FILES);
+
                 try {
-                    $testimonial->setEntityId($testimonial->getEntityIdByCode(Mage_Review_Model_Review::ENTITY_PRODUCT_CODE))
-                        ->setEntityPkValue($product->getId())
-                        ->setStatusId(Mage_Review_Model_Review::STATUS_PENDING)
-                        ->setCustomerId(Mage::getSingleton('customer/session')->getCustomerId())
-                        ->setStoreId(Mage::app()->getStore()->getId())
-                        ->setStores(array(Mage::app()->getStore()->getId()))
-                        ->save();
+                    $testimonial->validate();
+                    $testimonial->saveImage();
+                    $testimonial->save();
 
-                    $testimonial->aggregate();
-                    $session->addSuccess($this->__('Your review has been accepted for moderation.'));
+                    $session->addSuccess($this->__('Your testimonial has been saved successfully'));
+                } catch (Zend_Validate_Exception $ze) {
+                    $session->addError($ze->getMessage());
+                    $session->addError($this->__('Unable to post the testimonial'));
                 } catch (Exception $e) {
-                    $session->setFormData($data);
-                    $session->addError($this->__('Unable to post the review.'));
+                    $session->addError($this->__('Unable to post the testimonial'));
                 }
             }
-
-            $this->loadLayout();
-            $this->renderLayout();
         }
+
+        $this->loadLayout();
+        $this->renderLayout();
     }
 }

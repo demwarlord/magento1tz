@@ -5,7 +5,7 @@
  * @author      Dmytro Kamyshov
  */
 
-class Overdose_Testimonials_Block_Form extends Mage_Core_Block_Template
+class Overdose_Testimonials_Helper_Data extends Mage_Core_Helper_Abstract
 {
 
 }

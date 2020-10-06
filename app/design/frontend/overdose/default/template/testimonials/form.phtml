@@ -7,7 +7,12 @@
 ?>
 <div class="form-add">
     <h2><?php echo $this->__('Write Your Own Testimonial') ?></h2>
-    <form action="<?php echo $this->getAction() ?>" method="post" id="testimonial-form">
+    <form
+            action="<?php echo $this->getAction() ?>"
+            method="post"
+            id="testimonial-form"
+            enctype="multipart/form-data"
+    >
         <?php echo $this->getBlockHtml('formkey'); ?>
         <div class="fieldset">
             <ul class="form-list">
@@ -17,7 +22,13 @@
                         <?php echo $this->__('Title') ?>
                     </label>
                     <div class="input-box">
-                        <input type="text" name="title" id="title_field" class="input-text required-entry" value=""/>
+                        <input
+                                type="text"
+                                name="title"
+                                id="title_field"
+                                class="input-text required-entry"
+                                value=""
+                        />
                     </div>
                 </li>
 
@@ -27,7 +38,13 @@
                         <?php echo $this->__('Message') ?>
                     </label>
                     <div class="input-box">
-                        <textarea name="message" id="message_field" cols="5" rows="3" class="required-entry"></textarea>
+                        <textarea
+                                name="message"
+                                id="message_field"
+                                cols="5"
+                                rows="3"
+                                class="required-entry"
+                        ></textarea>
                     </div>
                 </li>
 
@@ -37,19 +54,26 @@
                         <?php echo $this->__("Image") ?>
                     </label>
                     <div class="input-box">
-                        <input type="file" name="image" id="image_field" class="input-file required-entry" value=""/>
+                        <input
+                                type="file"
+                                name="image"
+                                id="image_field"
+                                class="input-file required-entry"
+                                value=""
+                        />
                     </div>
                 </li>
             </ul>
         </div>
         <div class="buttons-set">
-            <button type="submit" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Submit Review')) ?>"
-                    class="button"><span><span><?php echo $this->__('Submit Review') ?></span></span></button>
+            <button type="submit"
+                    title="<?php echo Mage::helper('core')->quoteEscape($this->__('Submit Testimonial')) ?>"
+                    class="button">
+                <span><span><?php echo $this->__('Submit Testimonial') ?></span></span>
+            </button>
         </div>
     </form>
     <script type="text/javascript">
-        //<![CDATA[
         var dataForm = new VarienForm('testimonial-form');
-        //]]>
     </script>
 </div>

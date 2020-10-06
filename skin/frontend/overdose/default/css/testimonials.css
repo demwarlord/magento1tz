@@ -1,0 +1,41 @@
+/**
+ * @category    Overdose
+ * @package     Overdose_Testimonials
+ * @author      Dmytro Kamyshov
+ */
+
+.odtm-list-header {
+    margin-top: 50px;
+    font-weight: bold;
+}
+
+.odtm-list-ul {
+    position: relative;
+}
+
+.odtm-list-li {
+    margin-top: 30px;
+    border-top: 1px solid #ededed;
+}
+
+.odtm-list-befirst {
+    font-size: larger;
+}
+
+.odtm-list-item-title {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.odtm-list-item-message {
+    display: inline-block;
+    float: left;
+    width: 45%;
+}
+
+.odtm-list-item-image {
+    display: inline-block;
+    float: right;
+    width: 45%;
+}

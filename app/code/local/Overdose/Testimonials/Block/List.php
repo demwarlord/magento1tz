@@ -14,4 +14,14 @@ class Overdose_Testimonials_Block_List extends Mage_Core_Block_Template
     {
         return Mage::getModel('overdose_testimonials/testimonials')->getCollection();
     }
+
+    /**
+     * @param $image
+     *
+     * @return string
+     */
+    public function getImgPath($image)
+    {
+        return Mage::getModel('overdose_testimonials/testimonials')->getImgPath($image);
+    }
 }
